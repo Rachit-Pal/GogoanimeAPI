@@ -260,7 +260,7 @@ Output >>
 
 | Parameter      | Description                                     |
 | -------------- | ----------------------------------------------- |
-| `:id` (string) | **animeId can be found in every response body** |
+| `:id` (string) | **animeId can be found in every response body as can be seen in the above examples** |
 
 ```js
 fetch("http://localhost:3000/anime-details/naruto")
