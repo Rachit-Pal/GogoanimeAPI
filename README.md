@@ -17,6 +17,8 @@
   </p>
 </p>
 
+### Note: You might experience some delays using [my hosted api on heroku](https://gogoanime.herokuapp.com/), so feel free to host it on your own site.
+
 # Guide
 
 Below you'll find examples using [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) but you can use any other http library out there.
@@ -30,7 +32,7 @@ Below you'll find examples using [Fetch API](https://developer.mozilla.org/en-US
 - [Get Top Airing](#get-top-airing)
 - [Get Anime Genres](#get-genre)
 - [Get Anime Details](#get-anime-details)
-- [Get Streaming URLs](#get-streaming-url)
+- [Get Streaming URLs](#get-streaming-urls)
 
 ## Get Recent Episodes
 
@@ -258,8 +260,8 @@ Output >>
 
 ## Get Anime Details
 
-| Parameter      | Description                                     |
-| -------------- | ----------------------------------------------- |
+| Parameter      | Description                                                                          |
+| -------------- | ------------------------------------------------------------------------------------ |
 | `:id` (string) | **animeId can be found in every response body as can be seen in the above examples** |
 
 ```js
