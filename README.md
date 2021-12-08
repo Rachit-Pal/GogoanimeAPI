@@ -42,7 +42,7 @@ Below you'll find examples using [Fetch API](https://developer.mozilla.org/en-US
 | `page` (int) | **type 1 page limit: [1-331]. type 2: [1-139]. type 3: [1-22].**                                                                                                                              |
 
 ```js
-fetch("http://localhost:3000/recent-release")
+fetch("https://gogoanime.herokuapp.com/recent-release")
 	.then((response) => response.json())
 	.then((animelist) => console.log(animelist));
 ```
@@ -71,7 +71,7 @@ Output >>
 | `page` (int) | page limit: [1-504] |
 
 ```js
-fetch("http://localhost:3000/popular")
+fetch("https://gogoanime.herokuapp.com/popular")
 	.then((response) => response.json())
 	.then((animelist) => console.log(animelist));
 ```
@@ -100,7 +100,7 @@ Output >>
 | `page` (int)    | page limit may vary |
 
 ```js
-fetch("http://localhost:3000/search?keyw=naruto")
+fetch("https://gogoanime.herokuapp.com/search?keyw=naruto")
 	.then((response) => response.json())
 	.then((animelist) => console.log(animelist));
 ```
@@ -129,7 +129,7 @@ Output >>
 | `page` (int)   | page limit may vary                                                                                                            |
 
 ```js
-fetch("http://localhost:3000/anime-movies")
+fetch("https://gogoanime.herokuapp.com/anime-movies")
 	.then((response) => response.json())
 	.then((animelist) => console.log(animelist));
 ```
@@ -157,7 +157,7 @@ Output >>
 | `page` (int) | page limit [1-26] |
 
 ```js
-fetch("http://localhost:3000/top-airing")
+fetch("https://gogoanime.herokuapp.com/top-airing")
 	.then((response) => response.json())
 	.then((animelist) => console.log(animelist));
 ```
@@ -238,7 +238,7 @@ Output >>
 | `yuri`          |
 
 ```js
-fetch("http://localhost:3000/genre/action")
+fetch("https://gogoanime.herokuapp.com/genre/action")
 	.then((response) => response.json())
 	.then((animelist) => console.log(animelist));
 ```
@@ -265,7 +265,7 @@ Output >>
 | `:id` (string) | **animeId can be found in every response body as can be seen in the above examples** |
 
 ```js
-fetch("http://localhost:3000/anime-details/naruto")
+fetch("https://gogoanime.herokuapp.com/anime-details/naruto")
 	.then((response) => response.json())
 	.then((animelist) => console.log(animelist));
 ```
@@ -308,7 +308,7 @@ You might need the referer url to bypass 403 (Forbidden) HTTP code.
 To play the m3u8 videos you will need to use some HLS player.
 
 ```js
-fetch("http://localhost:3000/gogo-server/watch/naruto-episode-220")
+fetch("https://gogoanime.herokuapp.com/gogo-server/watch/naruto-episode-220")
 	.then((response) => response.json())
 	.then((animelist) => console.log(animelist));
 ```
@@ -325,7 +325,7 @@ Output >>
 ### VIDSTREAMING
 
 ```js
-fetch("http://localhost:3000/vid-streaming/watch/naruto-episode-220")
+fetch("https://gogoanime.herokuapp.com/vid-streaming/watch/naruto-episode-220")
 	.then((response) => response.json())
 	.then((animelist) => console.log(animelist));
 ```
