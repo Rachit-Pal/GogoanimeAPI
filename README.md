@@ -1,1 +1,1 @@
-# AnimeLazer-API
+# GoGoAnime-api
