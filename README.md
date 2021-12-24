@@ -112,9 +112,9 @@ Output >>
     {
         "animeId": "naruto",
         "animeTitle": "Naruto",
-        "animeUrl": "https://www1.gogoanime.cm//category/naruto",
-        "animeImg": "https://gogocdn.net/images/anime/N/naruto.jpg",
-        "status": "Released: 2002"
+	"animeImg": "https://gogocdn.net/images/anime/N/naruto.jpg",
+	"releasedDate": "2002",
+	"animeUrl": "https://www1.gogoanime.cm//category/naruto"
     },
     {...},
     ...
