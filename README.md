@@ -17,7 +17,7 @@
   </p>
 </p>
 
-### Note: You might experience some delays using [my hosted api on heroku](https://gogoanime.herokuapp.com/), so feel free to host it in your own site.
+### Note: You might experience some delays using [my hosted api on heroku](https://gogoanime.herokuapp.com/), so feel free to host it on your own site.
 
 # Guide
 
@@ -30,7 +30,7 @@ Below you'll find examples using [Fetch API](https://developer.mozilla.org/en-US
 - [Get Anime Search](#get-anime-search)
 - [Get Anime Movies](#get-anime-movies)
 - [Get Top Airing](#get-top-airing)
-- [Get Anime Genres](#get-anime-genres)
+- [Get Anime Genres](#get-genre)
 - [Get Anime Details](#get-anime-details)
 - [Get Streaming URLs](#get-streaming-urls)
 
@@ -112,9 +112,9 @@ Output >>
     {
         "animeId": "naruto",
         "animeTitle": "Naruto",
-	"animeImg": "https://gogocdn.net/images/anime/N/naruto.jpg",
-	"releasedDate": "2002",
-	"animeUrl": "https://www1.gogoanime.cm//category/naruto"
+        "animeUrl": "https://www1.gogoanime.cm//category/naruto",
+        "animeImg": "https://gogocdn.net/images/anime/N/naruto.jpg",
+        "status": "Released: 2002"
     },
     {...},
     ...
@@ -303,12 +303,10 @@ You might need the referer url to bypass 403 (Forbidden) HTTP code.
 | -------------- | -------------------------------------------------------------------------------------------------------- |
 | `:id` (string) | episodeId. **To verify the id of each episode, look at the episodesList property in the example above.** |
 
-### GOGO SERVER
-
-To play the m3u8 videos you will need to use some HLS player.
+### VIDCDN
 
 ```js
-fetch("https://gogoanime.herokuapp.com/gogo-server/watch/naruto-episode-220")
+fetch("https://gogoanime.herokuapp.com/vidcdn/watch/naruto-episode-220")
 	.then((response) => response.json())
 	.then((animelist) => console.log(animelist));
 ```
@@ -317,42 +315,36 @@ Output >>
 
 ```json
 {
-	"m3u8": "https://www02.anicdn.stream/videos/hls/8gQCxrw3kKcSr1vw79zLNQ/1638936932/25615/027e9529af2b06fe7b4f47e507a787eb/ep.220.1631668946.m3u8",
-	"referer": "https://gogoplay1.com/embedplus?id=MjU2MTU=&token=7SinmMUWpAkoUImuYBMWag&expires=1638924332"
+	"headers": {
+		"Referer": "https://gogoplay.io/"
+	},
+	"data": [
+		{
+			"file": "https://vidstreamingcdn.com/cdn34/a96411258da4b8a75319906d0cc507f7/EP.18.v0.1644104042.360p.mp4?mac=7GmeilE5nn5L7xGZqxt4YNTnzQ53eEazGha0ZBD15WU%3D&vip=&expiry=1644122389382",
+			"label": "360 P",
+			"type": "mp4"
+		},
+		{
+			"file": "https://vidstreamingcdn.com/cdn34/a96411258da4b8a75319906d0cc507f7/EP.18.v0.1644104042.480p.mp4?mac=JBKmkO3IViHhGVSsXLekTDjhGICtfkmvXPuW7wEPGuw%3D&vip=&expiry=1644122389440",
+			"label": "480 P",
+			"type": "mp4"
+		},
+		{
+			"file": "https://vidstreamingcdn.com/cdn34/a96411258da4b8a75319906d0cc507f7/EP.18.v0.1644104042.720p.mp4?mac=wx74gKGn9SeKI%2BFJRUbR6n3ohlwcdf9ANYZhJgtSG54%3D&vip=&expiry=1644122389494",
+			"label": "720 P",
+			"type": "mp4"
+		},
+		{
+			"file": "https://vidstreamingcdn.com/cdn34/a96411258da4b8a75319906d0cc507f7/EP.18.v0.1644104042.1080p.mp4?mac=vBygNaIMu43c33aeSeMzl%2Fp24QG5QTEzI6adjkaemIE%3D&vip=&expiry=1644122389554",
+			"label": "1080 P",
+			"type": "mp4"
+		},
+		{
+			"file": "https://vidstreamingcdn.com/cdn34/a96411258da4b8a75319906d0cc507f7/EP.18.v0.1644104042.720p.mp4?mac=wx74gKGn9SeKI%2BFJRUbR6n3ohlwcdf9ANYZhJgtSG54%3D&vip=&expiry=1644122389494",
+			"label": "Auto",
+			"default": "true",
+			"type": "mp4"
+		}
+	]
 }
-```
-
-### VIDSTREAMING
-
-```js
-fetch("https://gogoanime.herokuapp.com/vid-streaming/watch/naruto-episode-220")
-	.then((response) => response.json())
-	.then((animelist) => console.log(animelist));
-```
-
-Output >>
-
-```json
-[
-	{
-		"link": "https://gogo-cdn.com/download.php?url=aHR0cHM6LyAawehyfcghysfdsDGDYdgdsfsdfwstdgdsgtert9AdrefsdsdfwerFrefdsfrersfdsrfer36343534jZG4yNi5hbmljZG4uc3RyZWFtL3VzZXIxMzQyLzYxOWI4MzJhZjhmMTZhODhjYTEzOTdjMmQ0YjJjODQ2L0VQLjIyMC52MS4zNjBwLm1wND90b2tlbj1ubXdsU0dKTWxycFVyNjBWSFRoMmh3JmV4cGlyZXM9MTYzODkzODYwOSZpZD0yNTYxNQ==",
-		"quality": "360P",
-		"referer": "https://gogoplay1.com/download?id=MjU2MTU=&typesub=Gogoanime-SUB&title=Naruto+Episode+220"
-	},
-	{
-		"link": "https://gogo-cdn.com/download.php?url=aHR0cHM6LyAawehyfcghysfdsDGDYdgdsfsdfwstdgdsgtert9AdeqwrwedffryretgsdFrsftrsvfsfsrjZG4yNi5hbmljZG4uc3RyZWFtL3VzZXIxMzQyLzYxOWI4MzJhZjhmMTZhODhjYTEzOTdjMmQ0YjJjODQ2L0VQLjIyMC52MS40ODBwLm1wND90b2tlbj03VGY4S3ZwUGNmZ3AwQXZneV9oa01RJmV4cGlyZXM9MTYzODkzODYwOSZpZD0yNTYxNQ==",
-		"quality": "480P",
-		"referer": "https://gogoplay1.com/download?id=MjU2MTU=&typesub=Gogoanime-SUB&title=Naruto+Episode+220"
-	},
-	{
-		"link": "https://gogo-cdn.com/download.php?url=aHR0cHM6LyAdrefsdsdfwerFrefdsfrersfdsrfer363435349AdeqwrwedffryretgsdFrsftrsvfsfsrjZG4yNi5hbmljZG4uc3RyZWFtL3VzZXIxMzQyLzYxOWI4MzJhZjhmMTZhODhjYTEzOTdjMmQ0YjJjODQ2L0VQLjIyMC52MS43MjBwLm1wND90b2tlbj04Ri1vTWFsYV9MdnpoVHdtYmZIZ1NRJmV4cGlyZXM9MTYzODkzODYwOSZpZD0yNTYxNQ==",
-		"quality": "720P",
-		"referer": "https://gogoplay1.com/download?id=MjU2MTU=&typesub=Gogoanime-SUB&title=Naruto+Episode+220"
-	},
-	{
-		"link": "https://gogo-cdn.com/download.php?url=aHR0cHM6LyAawehyfcghysfdsDGDYdgdsfsdfwstdgdsgtert9AdrefsdsdfwerFrefdsfrersfdsrfer36343534jZG4yNi5hbmljZG4uc3RyZWFtL3VzZXIxMzQyLzYxOWI4MzJhZjhmMTZhODhjYTEzOTdjMmQ0YjJjODQ2L0VQLjIyMC52MS4xMDgwcC5tcDQ/dG9rZW49ejJMRWo4eE00QWNvWmE4TlFOQmp5QSZleHBpcmVzPTE2Mzg5Mzg2MDkmaWQ9MjU2MTU=",
-		"quality": "1080P",
-		"referer": "https://gogoplay1.com/download?id=MjU2MTU=&typesub=Gogoanime-SUB&title=Naruto+Episode+220"
-	}
-]
 ```
