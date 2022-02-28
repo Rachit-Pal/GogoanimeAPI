@@ -1,46 +1,19 @@
-import express from 'express'
-import cors from 'cors'
+import express from "express";
 
-import {
-    scrapeGenre,
-    scrapeTopAiringAnime,
-    scrapeAnimeMovies,
-    scrapePopularAnime,
-    scrapeNewSeason,
-    scrapeRecentRelease,
-    scrapeSearch,
-    scrapeAnimeDetails,
-    scrapeSeason,
-    scrapeMP4,
+import { Gogoanime } from "../parsers/index.js";
 
-} from './anime_parser.js'
+const router = express.Router();
 
-const port = process.env.PORT || 3000;
+router.get("/", (req, res) => {
+    res.send("Welcome to Gogoanime home page!!");
+});
 
-const corsOptions = {
-    origin: "*",
-    credentails: true,
-    optionSuccessStatus: 200,
-    port: port,
-}
-
-const app = express();
-
-
-app.use(cors(corsOptions))
-app.use(express.json())
-
-
-app.get("/", (req, res) => {
-    res.status(200).json('Welcome to GogoAnime API!')
-})
-
-app.get("/search", async(req, res) => {
+router.get("/search", async(req, res) => {
     try {
         const keyw = req.query.keyw
         const page = req.query.page
 
-        const data = await scrapeSearch({ keyw: keyw, page: page })
+        const data = await Gogoanime.scrapeSearch({ keyw: keyw, page: page })
 
         res.status(200).json(data)
 
@@ -53,12 +26,12 @@ app.get("/search", async(req, res) => {
     }
 })
 
-app.get("/recent-release", async(req, res) => {
+router.get("/recent-release", async(req, res) => {
     try {
         const page = req.query.page
         const type = req.query.type
 
-        const data = await scrapeRecentRelease({ page: page, type: type })
+        const data = await Gogoanime.scrapeRecentRelease({ page: page, type: type })
 
         res.status(200).json(data)
 
@@ -71,11 +44,11 @@ app.get("/recent-release", async(req, res) => {
     }
 })
 
-app.get("/new-season", async(req, res) => {
+router.get("/new-season", async(req, res) => {
     try {
         const page = req.query.page
 
-        const data = await scrapeNewSeason({ page: page })
+        const data = await Gogoanime.scrapeNewSeason({ page: page })
 
         res.status(200).json(data)
 
@@ -88,11 +61,11 @@ app.get("/new-season", async(req, res) => {
     }
 })
 
-app.get("/popular", async(req, res) => {
+router.get("/popular", async(req, res) => {
     try {
         const page = req.query.page
 
-        const data = await scrapePopularAnime({ page: page })
+        const data = await Gogoanime.scrapePopularAnime({ page: page })
 
         res.status(200).json(data)
 
@@ -105,12 +78,12 @@ app.get("/popular", async(req, res) => {
     }
 })
 
-app.get("/anime-movies", async(req, res) => {
+router.get("/anime-movies", async(req, res) => {
     try {
         const page = req.query.page
         const alphabet = req.query.aph
 
-        const data = await scrapeAnimeMovies({ page: page, aph: alphabet })
+        const data = await Gogoanime.scrapeAnimeMovies({ page: page, aph: alphabet })
 
         res.status(200).json(data)
 
@@ -124,11 +97,11 @@ app.get("/anime-movies", async(req, res) => {
 })
 
 
-app.get("/top-airing", async(req, res) => {
+router.get("/top-airing", async(req, res) => {
     try {
         const page = req.query.page
 
-        const data = await scrapeTopAiringAnime({ page: page })
+        const data = await Gogoanime.scrapeTopAiringAnime({ page: page })
 
         res.status(200).json(data)
 
@@ -141,12 +114,12 @@ app.get("/top-airing", async(req, res) => {
     }
 })
 
-app.get("/season/:season", async(req, res) => {
+router.get("/season/:season", async(req, res) => {
     try {
         const page = req.query.page
         const season = req.params.season
 
-        const data = await scrapeSeason({ page: page, season: season })
+        const data = await Gogoanime.scrapeSeason({ page: page, season: season })
 
         res.status(200).json(data)
 
@@ -159,12 +132,12 @@ app.get("/season/:season", async(req, res) => {
     }
 })
 
-app.get("/genre/:genre", async(req, res) => {
+router.get("/genre/:genre", async(req, res) => {
     try {
         const genre = req.params.genre
         const page = req.query.page
 
-        const data = await scrapeGenre({ genre: genre, page: page })
+        const data = await Gogoanime.scrapeGenre({ genre: genre, page: page })
 
         res.status(200).json(data)
 
@@ -178,11 +151,11 @@ app.get("/genre/:genre", async(req, res) => {
 })
 
 
-app.get("/anime-details/:id", async(req, res) => {
+router.get("/anime-details/:id", async(req, res) => {
     try {
         const id = req.params.id
 
-        const data = await scrapeAnimeDetails({ id: id })
+        const data = await Gogoanime.scrapeAnimeDetails({ id: id })
 
         res.status(200).json(data)
 
@@ -196,11 +169,11 @@ app.get("/anime-details/:id", async(req, res) => {
 })
 
 
-app.get("/vidcdn/watch/:id", async(req, res) => {
+router.get("/vidcdn/watch/:id", async(req, res) => {
     try {
         const id = req.params.id
 
-        const data = await scrapeMP4({ id: id })
+        const data = await Gogoanime.scrapeMP4({ id: id })
 
         res.status(200).json(data)
 
@@ -214,35 +187,4 @@ app.get("/vidcdn/watch/:id", async(req, res) => {
     }
 })
 
-// app.get("/vid-streaming/watch/:id", async(req, res) => {
-//     try {
-//         const id = req.params.id
-
-//         const data = await scrapeMp4({ id: id })
-
-//         res.status(200).json(data)
-
-//     } catch (err) {
-//         res.status(500).json({
-//             status: 500,
-//             error: "Internal Error",
-//             message: err,
-//         })
-//     }
-// })
-
-app.use((req, res) => {
-    res.status(404).json({
-        status: 404,
-        error: "Not Found",
-    })
-})
-
-
-app.listen(port, () => {
-    console.log(
-        "Express server listening on port %d in %s mode",
-        port,
-        app.settings.env
-    )
-})
+export default router;
