@@ -44,11 +44,11 @@ router.get("/recent-release", async(req, res) => {
     }
 })
 
-router.get("/new-season", async(req, res) => {
+router.get("/current-season", async(req, res) => {
     try {
         const page = req.query.page
 
-        const data = await Gogoanime.scrapeNewSeason({ page: page })
+        const data = await Gogoanime.scrapeCurrentSeason({ page: page })
 
         res.status(200).json(data)
 
@@ -167,6 +167,25 @@ router.get("/anime-details/:id", async(req, res) => {
         })
     }
 })
+
+router.get("/anime-episodes/:animeId", async(req, res) => {
+    try {
+        const animeId = req.params.animeId
+
+        const data = await Gogoanime.scrapeEpisodes({ animeId: animeId })
+
+        res.status(200).json(data)
+
+    } catch (err) {
+        res.status(500).json({
+            status: 500,
+            error: "Internal Error",
+            message: err,
+        })
+    }
+})
+
+
 
 
 router.get("/vidcdn/watch/:id", async(req, res) => {

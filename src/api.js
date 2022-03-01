@@ -17,10 +17,10 @@ const corsOptions = {
 
 const app = express();
 
-app.use(cors(corsOptions))
-app.use(express.json())
+app.use(cors(corsOptions));
+app.use(express.json());
 
-app.use('/favicon.ico', express.static('../images/image1.png'))
+app.use('/favicon.ico', express.static('../images/image1.png'));
 
 app.use("/gogoanime", gogoanime);
 app.use("/animekisa", animekisa);
@@ -37,7 +37,6 @@ app.get("/", (req, res) => {
     res.write('<li>/animekisa/recent-release?page=<page number>&type=<type>');
     res.write('<li>/animekisa/new-season?page=<page number>');
     res.write('</ul>');
-
     res.end();
 })
 
@@ -46,8 +45,8 @@ app.use((req, res) => {
     res.status(404).json({
         status: 404,
         error: "Page Not Found",
-    })
-})
+    });
+});
 
 
 app.listen(port, () => {
@@ -56,5 +55,5 @@ app.listen(port, () => {
         port,
         app.settings.env
     )
-    console.log(`http://localhost:${port}`)
+    console.log(`http://localhost:${port}`);
 })
