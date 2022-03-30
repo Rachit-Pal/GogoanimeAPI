@@ -17,7 +17,7 @@
   </p>
 </p>
 
-### Note: You might experience some delays using [my hosted api on heroku](https://gogoanime.herokuapp.com/), so feel free to host it on your own site.
+### Note: You might experience some delays or issues using [my hosted api on heroku](https://gogoanime.herokuapp.com/), so feel free to host it on your own site.
 
 # Guide
 
