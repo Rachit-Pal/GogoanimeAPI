@@ -28,15 +28,6 @@ app.use("/animekisa", animekisa);
 app.get("/", (req, res) => {
     res.setHeader('Content-Type', 'text/html');
     res.write('<h1>Welcome to Anime parser API!</h1>');
-    res.write('<h2>Endpoints:</h2>');
-    res.write('<ul>');
-    res.write('<li>/gogoanime/search?keyw=<keyword>&page=<page number>');
-    res.write('<li>/gogoanime/recent-release?page=<page number>&type=<type>');
-    res.write('<li>/gogoanime/new-season?page=<page number>');
-    res.write('<li>/animekisa/search?keyw=<keyword>&page=<page number>');
-    res.write('<li>/animekisa/recent-release?page=<page number>&type=<type>');
-    res.write('<li>/animekisa/new-season?page=<page number>');
-    res.write('</ul>');
     res.end();
 })
 

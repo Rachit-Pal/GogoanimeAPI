@@ -2,7 +2,7 @@ import axios from 'axios'
 import cheerio from 'cheerio'
 import CryptoJS from 'crypto-js'
 
-import { f_random } from '../helpers/random.js'
+import { f_random } from '../utils/helpers.js'
 import { Constants } from '../utils/C.js'
 
 export class Gogoanime {
