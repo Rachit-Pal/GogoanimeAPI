@@ -30,7 +30,7 @@ Below you'll find examples using [Fetch API](https://developer.mozilla.org/en-US
 - [Get Anime Search](#get-anime-search)
 - [Get Anime Movies](#get-anime-movies)
 - [Get Top Airing](#get-top-airing)
-- [Get Anime Genres](#get-genre)
+- [Get Anime Genres](#get-anime-genres)
 - [Get Anime Details](#get-anime-details)
 - [Get Streaming URLs](#get-streaming-urls)
 
@@ -43,8 +43,8 @@ Below you'll find examples using [Fetch API](https://developer.mozilla.org/en-US
 
 ```js
 fetch("https://gogoanime.herokuapp.com/recent-release")
-	.then((response) => response.json())
-	.then((animelist) => console.log(animelist));
+  .then((response) => response.json())
+  .then((animelist) => console.log(animelist));
 ```
 
 Output >>
@@ -72,8 +72,8 @@ Output >>
 
 ```js
 fetch("https://gogoanime.herokuapp.com/popular")
-	.then((response) => response.json())
-	.then((animelist) => console.log(animelist));
+  .then((response) => response.json())
+  .then((animelist) => console.log(animelist));
 ```
 
 Output >>
@@ -101,8 +101,8 @@ Output >>
 
 ```js
 fetch("https://gogoanime.herokuapp.com/search?keyw=naruto")
-	.then((response) => response.json())
-	.then((animelist) => console.log(animelist));
+  .then((response) => response.json())
+  .then((animelist) => console.log(animelist));
 ```
 
 Output >>
@@ -130,8 +130,8 @@ Output >>
 
 ```js
 fetch("https://gogoanime.herokuapp.com/anime-movies")
-	.then((response) => response.json())
-	.then((animelist) => console.log(animelist));
+  .then((response) => response.json())
+  .then((animelist) => console.log(animelist));
 ```
 
 Output >>
@@ -158,8 +158,8 @@ Output >>
 
 ```js
 fetch("https://gogoanime.herokuapp.com/top-airing")
-	.then((response) => response.json())
-	.then((animelist) => console.log(animelist));
+  .then((response) => response.json())
+  .then((animelist) => console.log(animelist));
 ```
 
 Output >>
@@ -239,8 +239,8 @@ Output >>
 
 ```js
 fetch("https://gogoanime.herokuapp.com/genre/action")
-	.then((response) => response.json())
-	.then((animelist) => console.log(animelist));
+  .then((response) => response.json())
+  .then((animelist) => console.log(animelist));
 ```
 
 Output >>
@@ -266,8 +266,8 @@ Output >>
 
 ```js
 fetch("https://gogoanime.herokuapp.com/anime-details/naruto")
-	.then((response) => response.json())
-	.then((animelist) => console.log(animelist));
+  .then((response) => response.json())
+  .then((animelist) => console.log(animelist));
 ```
 
 Output >>
@@ -307,44 +307,44 @@ You might need the referer url to bypass 403 (Forbidden) HTTP code.
 
 ```js
 fetch("https://gogoanime.herokuapp.com/vidcdn/watch/naruto-episode-220")
-	.then((response) => response.json())
-	.then((animelist) => console.log(animelist));
+  .then((response) => response.json())
+  .then((animelist) => console.log(animelist));
 ```
 
 Output >>
 
 ```json
 {
-	"headers": {
-		"Referer": "https://gogoplay.io/"
-	},
-	"data": [
-		{
-			"file": "https://vidstreamingcdn.com/cdn34/a96411258da4b8a75319906d0cc507f7/EP.18.v0.1644104042.360p.mp4?mac=7GmeilE5nn5L7xGZqxt4YNTnzQ53eEazGha0ZBD15WU%3D&vip=&expiry=1644122389382",
-			"label": "360 P",
-			"type": "mp4"
-		},
-		{
-			"file": "https://vidstreamingcdn.com/cdn34/a96411258da4b8a75319906d0cc507f7/EP.18.v0.1644104042.480p.mp4?mac=JBKmkO3IViHhGVSsXLekTDjhGICtfkmvXPuW7wEPGuw%3D&vip=&expiry=1644122389440",
-			"label": "480 P",
-			"type": "mp4"
-		},
-		{
-			"file": "https://vidstreamingcdn.com/cdn34/a96411258da4b8a75319906d0cc507f7/EP.18.v0.1644104042.720p.mp4?mac=wx74gKGn9SeKI%2BFJRUbR6n3ohlwcdf9ANYZhJgtSG54%3D&vip=&expiry=1644122389494",
-			"label": "720 P",
-			"type": "mp4"
-		},
-		{
-			"file": "https://vidstreamingcdn.com/cdn34/a96411258da4b8a75319906d0cc507f7/EP.18.v0.1644104042.1080p.mp4?mac=vBygNaIMu43c33aeSeMzl%2Fp24QG5QTEzI6adjkaemIE%3D&vip=&expiry=1644122389554",
-			"label": "1080 P",
-			"type": "mp4"
-		},
-		{
-			"file": "https://vidstreamingcdn.com/cdn34/a96411258da4b8a75319906d0cc507f7/EP.18.v0.1644104042.720p.mp4?mac=wx74gKGn9SeKI%2BFJRUbR6n3ohlwcdf9ANYZhJgtSG54%3D&vip=&expiry=1644122389494",
-			"label": "Auto",
-			"default": "true",
-			"type": "mp4"
-		}
-	]
+  "headers": {
+    "Referer": "https://gogoplay.io/"
+  },
+  "data": [
+    {
+      "file": "https://vidstreamingcdn.com/cdn34/a96411258da4b8a75319906d0cc507f7/EP.18.v0.1644104042.360p.mp4?mac=7GmeilE5nn5L7xGZqxt4YNTnzQ53eEazGha0ZBD15WU%3D&vip=&expiry=1644122389382",
+      "label": "360 P",
+      "type": "mp4"
+    },
+    {
+      "file": "https://vidstreamingcdn.com/cdn34/a96411258da4b8a75319906d0cc507f7/EP.18.v0.1644104042.480p.mp4?mac=JBKmkO3IViHhGVSsXLekTDjhGICtfkmvXPuW7wEPGuw%3D&vip=&expiry=1644122389440",
+      "label": "480 P",
+      "type": "mp4"
+    },
+    {
+      "file": "https://vidstreamingcdn.com/cdn34/a96411258da4b8a75319906d0cc507f7/EP.18.v0.1644104042.720p.mp4?mac=wx74gKGn9SeKI%2BFJRUbR6n3ohlwcdf9ANYZhJgtSG54%3D&vip=&expiry=1644122389494",
+      "label": "720 P",
+      "type": "mp4"
+    },
+    {
+      "file": "https://vidstreamingcdn.com/cdn34/a96411258da4b8a75319906d0cc507f7/EP.18.v0.1644104042.1080p.mp4?mac=vBygNaIMu43c33aeSeMzl%2Fp24QG5QTEzI6adjkaemIE%3D&vip=&expiry=1644122389554",
+      "label": "1080 P",
+      "type": "mp4"
+    },
+    {
+      "file": "https://vidstreamingcdn.com/cdn34/a96411258da4b8a75319906d0cc507f7/EP.18.v0.1644104042.720p.mp4?mac=wx74gKGn9SeKI%2BFJRUbR6n3ohlwcdf9ANYZhJgtSG54%3D&vip=&expiry=1644122389494",
+      "label": "Auto",
+      "default": "true",
+      "type": "mp4"
+    }
+  ]
 }
 ```
