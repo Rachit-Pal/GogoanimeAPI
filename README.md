@@ -184,6 +184,7 @@ Output >>
 | Parameter         | Description                           |
 | ----------------- | ------------------------------------- |
 | `:genre` (string) | [Genres are avaliable below](#genres) |
+| `page` (int)      | The page limit varies by genre.       |
 
 #### Genres
 
