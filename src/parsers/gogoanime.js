@@ -1,9 +1,8 @@
 import axios from 'axios'
 import cheerio from 'cheerio'
-import CryptoJS from 'crypto-js'
 
-import { f_random } from '../utils/helpers.js'
 import { Constants } from '../utils/C.js'
+import { generateEncryptAjaxParameters, decryptEncryptAjaxResponse } from '../extractors/gogoplay.js'
 
 export class Gogoanime {
     static BASE_URL = "https://gogoanime.news"
@@ -19,6 +18,7 @@ export class Gogoanime {
     static list_episodes_url = `${this.ajax_url}ajax/load-list-episode`
     static seasons_url = "/season"
     static GOGO_Referer = "https://gogoplay.io/"
+    static goload_stream_url = "https://goload.pro/streaming.php"
 
 
     static parseData($, isSearch = false, isDefault = true, isDefault2 = false, selector = null) {
@@ -59,47 +59,46 @@ export class Gogoanime {
         return animeList
     }
 
-
-    static generateEncryptAjaxParameters($, id) {
-        const value6 = $('script[data-name=\x27ts\x27]').data('value');
-        const value5 = $("[name='crypto']").attr('content');
-        const value1 =
-            CryptoJS.enc.Utf8.stringify(
-                CryptoJS.AES.decrypt($('script[data-name=\x27crypto\x27]').data('value'),
-                    CryptoJS.enc.Utf8.parse(value6.toString() + value6.toString()), {
-                        iv: CryptoJS.enc.Utf8.parse(value6)
-                    }));
-
-        const value4 =
-            CryptoJS.AES.decrypt(value5, CryptoJS.enc.Utf8.parse(value1), {
-                iv: CryptoJS.enc.Utf8.parse(value6)
-            });
-        const value3 = CryptoJS.enc.Utf8.stringify(value4);
-        const value2 = f_random(16);
-        return 'id=' + CryptoJS.AES.encrypt(id, CryptoJS.enc.Utf8.parse(value1), {
-            iv: CryptoJS.enc.Utf8.parse(value2)
-        }).toString() + '&time=' + '00' + value2 + '00' + value3.substring(value3.indexOf('&'));
-    }
-
     static scrapeMP4 = async({ id }) => {
-        var m3u8Url = '';
+        let sources = [];
+        let sources_bk = [];
         try {
-            const epPage = await axios.get(this.BASE_URL2 + "/" + id);
-            const $ = cheerio.load(epPage.data)
+            let epPage, server, $, serverUrl;
 
-            const server = $('li.vidcdn > a').attr('data-video')
+            if (id.includes("episode")) {
+                epPage = await axios.get(this.BASE_URL + "/" + id);
+                $ = cheerio.load(epPage.data)
 
-            const goGoServerPage = await axios.get("https:" + server)
+                server = $('#load_anime > div > div > iframe').attr('src')
+                serverUrl = new URL("https:" + server)
+
+            } else serverUrl = new URL(`${this.goload_stream_url}?id=${id}`)
+
+
+            const goGoServerPage = await axios.get(serverUrl.href, { headers: { 'User-Agent': Constants.USER_AGENT } })
             const $$ = cheerio.load(goGoServerPage.data)
 
-            const data = $$('body > div > div').html()
-            const matcher = data.match('(http|https)://([\\w_-]+(?:(?:\\.[\\w_-]+)+))([\\w.,@?^=%&:/~+#-]*[\\w@?^=%&/~+#-])?')[0]
-            if (matcher.includes("m3u8") || matcher.includes("googlevideo")) {
-                m3u8Url = matcher
-            }
+            const params = await generateEncryptAjaxParameters($$, serverUrl.searchParams.get('id'));
+
+            const fetchRes = await axios.get(`
+            ${serverUrl.protocol}//${serverUrl.hostname}/encrypt-ajax.php?${params}`, {
+                headers: {
+                    'User-Agent': Constants.USER_AGENT,
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+
+            const res = decryptEncryptAjaxResponse(fetchRes.data)
+
+            if (!res.source) return { error: "No source found" };
+
+            res.source.forEach(source => sources.push(source))
+            res.source_bk.forEach(source => sources_bk.push(source))
+
             return {
-                m3u8: m3u8Url,
-                referer: "https:" + server,
+                Referer: serverUrl.href,
+                sources: sources,
+                sources_bk: sources_bk
             }
 
         } catch (err) {

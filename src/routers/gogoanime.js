@@ -188,7 +188,7 @@ router.get("/anime-episodes/:animeId", async(req, res) => {
 
 
 
-router.get("/vidcdn/watch/:id", async(req, res) => {
+router.get("/gogoplay/watch/:id", async(req, res) => {
     try {
         const id = req.params.id
 
