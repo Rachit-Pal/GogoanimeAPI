@@ -330,21 +330,30 @@ Output >>
       "label": "480 P",
       "type": "mp4"
     },
+    ...
+  ]
+}
+```
+
+### StreamSB
+
+```js
+fetch("https://gogoanime.herokuapp.com/streamsb/watch/naruto-episode-220")
+  .then((response) => response.json())
+  .then((animelist) => console.log(animelist));
+```
+
+```json
+{
+  "headers": {
+    "Referer": "https://sbplay2.xyz/e/84ob4f649y3j"
+  },
+  "sources": [
     {
-      "file": "https://vidstreamingcdn.com/cdn34/a96411258da4b8a75319906d0cc507f7/EP.18.v0.1644104042.720p.mp4?mac=wx74gKGn9SeKI%2BFJRUbR6n3ohlwcdf9ANYZhJgtSG54%3D&vip=&expiry=1644122389494",
-      "label": "720 P",
-      "type": "mp4"
+      "file": "https://delivery412.akamai-cdn-content.com/hls2/01/02251/84ob4f649y3j_,n,h,.urlset/master.m3u8?t=W6w3DBAuEd6Xc3cYAQiEy5rYqeqY84IBs1XeDkhdYxQ&s=1652035632&e=21600&f=11258098&srv=sto066"
     },
     {
-      "file": "https://vidstreamingcdn.com/cdn34/a96411258da4b8a75319906d0cc507f7/EP.18.v0.1644104042.1080p.mp4?mac=vBygNaIMu43c33aeSeMzl%2Fp24QG5QTEzI6adjkaemIE%3D&vip=&expiry=1644122389554",
-      "label": "1080 P",
-      "type": "mp4"
-    },
-    {
-      "file": "https://vidstreamingcdn.com/cdn34/a96411258da4b8a75319906d0cc507f7/EP.18.v0.1644104042.720p.mp4?mac=wx74gKGn9SeKI%2BFJRUbR6n3ohlwcdf9ANYZhJgtSG54%3D&vip=&expiry=1644122389494",
-      "label": "Auto",
-      "default": "true",
-      "type": "mp4"
+      "backup": "https://delivery412.akamai-cdn-content.com/hls2/01/02251/84ob4f649y3j_,n,h,.urlset/master.m3u8?t=W6w3DBAuEd6Xc3cYAQiEy5rYqeqY84IBs1XeDkhdYxQ&s=1652035632&e=21600&f=11258098&srv=sto066"
     }
   ]
 }
