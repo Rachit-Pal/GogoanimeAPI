@@ -361,7 +361,9 @@ Output >>
 }
 ```
 
-### Fembed (Note: This is not available for all anime(s), so you might need to use another provider instead. VIDCDN and StreamSB are the most reliable)
+### Fembed
+
+#### **Note: This is not available for all anime(s), so you might need to use another provider instead. VIDCDN and StreamSB are the most reliable**
 
 ```js
 fetch("https://gogoanime.herokuapp.com/fembed/watch/spy-x-family-episode-5")
