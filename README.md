@@ -343,17 +343,49 @@ fetch("https://gogoanime.herokuapp.com/streamsb/watch/naruto-episode-220")
   .then((animelist) => console.log(animelist));
 ```
 
+Output >>
+
 ```json
 {
   "headers": {
     "Referer": "https://sbplay2.xyz/e/84ob4f649y3j"
   },
-  "sources": [
+  "data": [
     {
       "file": "https://delivery412.akamai-cdn-content.com/hls2/01/02251/84ob4f649y3j_,n,h,.urlset/master.m3u8?t=W6w3DBAuEd6Xc3cYAQiEy5rYqeqY84IBs1XeDkhdYxQ&s=1652035632&e=21600&f=11258098&srv=sto066"
     },
     {
       "backup": "https://delivery412.akamai-cdn-content.com/hls2/01/02251/84ob4f649y3j_,n,h,.urlset/master.m3u8?t=W6w3DBAuEd6Xc3cYAQiEy5rYqeqY84IBs1XeDkhdYxQ&s=1652035632&e=21600&f=11258098&srv=sto066"
+    }
+  ]
+}
+```
+
+### Fembed (Note: This is not available for all anime(s), so you might need to use another provider instead. VIDCDN and StreamSB are the most reliable)
+
+```js
+fetch("https://gogoanime.herokuapp.com/fembed/watch/spy-x-family-episode-5")
+  .then((response) => response.json())
+  .then((animelist) => console.log(animelist));
+```
+
+Output >>
+
+```json
+{
+  "headers": {
+    "Referer": "https://fembed-hd.com/v/nd27xs2gjrpjle8"
+  },
+  "data": [
+    {
+      "file": "https://fvs.io/redirector?token=aHp4NVZDV3FZcStXQlFsOFNFQ3VvQWhRNXlpVlFUNlNaZWFOTTVpb0FWZ3FKMEtRL25qTXQ1UCtqNi9DRENJTXA1dWFVSUJrRkNQMnVnd1FQcXBrYXR4T2F6U2ZZdXIrNkx2bEh5TjBjZEZmd3JQandURzJrMTIyQitjR3dyYTJYYkI4OXZXRVlqd2QwbkFhVVdLYzdHdkZJV2RYMHNTYjpua3lLQ2lrSGw4dXFob0I0WmtoYkxBPT01iA4",
+      "label": "480p",
+      "type": "mp4"
+    },
+    {
+      "file": "https://fvs.io/redirector?token=Tkc1dHYvcTI5bFFwekcyZjVoWXRsa2VSd1lwOEVtMGNXbStMdUxWWWZNcHJaK3FvazhQMWhKelFmTWNMZEZlQVhLbGt1d3dTMXZiNkQ5WEdjdlhaSEE5dFVyR2diQkgvcjhxcVdkb2haa3B2a2NZNDQ3eW9RZyttU0REVW1kbXMwdDhLQ0RkSFovellYcmxjZHdyVm54NkJtTm5ZRmlncjp0ODdVNG01dDVyeFZMKzBjZ2N6WWVnPT0eCGY",
+      "label": "720p",
+      "type": "mp4"
     }
   ]
 }
