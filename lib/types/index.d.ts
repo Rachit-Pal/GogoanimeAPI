@@ -1,28 +1,28 @@
 export type AnimeList = {
-  animeId: string | undefined;
-  animeTitle: string | undefined;
-  animeUrl: string | undefined;
-  animeImg: string | undefined;
-  status: string | undefined;
+  animeId?: string;
+  animeTitle?: string;
+  animeUrl?: string;
+  animeImg?: string;
+  status?: string;
 };
 
 export type Episode = {
-  episodeId: string | undefined;
-  episodeNum: number | string | undefined;
-  episodeUrl: string | undefined;
+  episodeId?: string;
+  episodeNum?: number | string;
+  episodeUrl?: string;
 };
 
 export type Anime = {
-  animeId: string | undefined;
-  type: string | undefined;
-  animeTitle: string | undefined;
-  animeImg: string | undefined;
-  status: string | undefined;
-  genres: string[] | undefined;
-  otherNames: string[] | string | undefined;
-  synopsis: string | undefined;
-  totalEpisodes: number | string | undefined;
-  episodesList: Episode[] | undefined;
+  animeId?: string;
+  type?: string;
+  animeTitle?: string;
+  animeImg?: string;
+  status?: string;
+  genres?: string[];
+  otherNames?: string[] | string;
+  synopsis?: string;
+  totalEpisodes?: number | string;
+  episodesList?: Episode[];
 };
 
 /**
@@ -31,7 +31,7 @@ export type Anime = {
  * @param {string} keyw query keyword to search
  * @param {string} page current page
  */
-export declare function scrapeSearch(list: AnimeList[] = [], keyw: string, page: number = 1): Promise<AnimeList[]>;
+export declare function scrapeSearch(list: ?AnimeList[], keyw: string, page: number = 1): Promise<AnimeList[]>;
 
 /**
  *
