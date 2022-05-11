@@ -4,6 +4,7 @@
     "description": "",
     "main": "index.js",
     "type": "module",
+    "types": "lib/types/index.d.ts",
     "scripts": {
         "start": "node lib/api.js",
         "dev": "nodemon lib/api.js",
@@ -12,6 +13,7 @@
     "keywords": [],
     "author": "",
     "license": "ISC",
+
     "dependencies": {
         "axios": "^0.24.0",
         "binascii": "^0.0.2",
