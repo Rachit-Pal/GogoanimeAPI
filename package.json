@@ -2,7 +2,7 @@
     "name": "gogoanime-api",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "lib/anime_parser.js",
     "type": "module",
     "types": "lib/types/index.d.ts",
     "scripts": {
