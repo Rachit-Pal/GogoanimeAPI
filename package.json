@@ -1,0 +1,41 @@
+{
+  "name": "gogoanime",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-plugin-styled-components": "latest",
+    "next": "latest",
+    "react": "latest",
+    "axios": "^0.27.2",
+    "binascii": "^0.0.2",
+    "cheerio": "^1.0.0-rc.10",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
+    "react-dom": "latest",
+    "prop-types": "latest",
+    "styled-components": "latest",
+    "webpack": "latest"
+  },
+  "devDependencies": {
+    "eslint": "latest",
+    "babel-eslint": "latest",
+    "eslint-config-airbnb": "latest",
+    "eslint-config-mcansh": "latest",
+    "eslint-config-prettier": "latest",
+    "eslint-plugin-import": "latest",
+    "eslint-plugin-jsx-a11y": "latest",
+    "eslint-plugin-react": "latest",
+    "eslint-plugin-prettier": "latest",
+    "prettier": "latest"
+  }
+}
