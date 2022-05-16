@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/riimuru/gogoanime">
-    <img src="images/image1.png" alt="Logo" width="85" height="85">
+    <img src="https://raw.githubusercontent.com/riimuru/gogoanime/main/images/image1.png" alt="Logo" width="85" height="85">
   </a>
 
   <h3 align="center">GogoAnime API</h3>
