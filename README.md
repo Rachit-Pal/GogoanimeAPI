@@ -17,7 +17,9 @@
   </p>
 </p>
 
-### Note: You might experience some delays or issues using [my hosted api on heroku](https://gogoanime.herokuapp.com/), so feel free to host it on your own site.
+### Note: You might experience some delays or issues using [my hosted api on heroku](https://gogoanime.herokuapp.com/), so feel free to host it on your own site or use the heroku deployment button for easier deployment.
+
+[![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/riimuru/gogoanime/tree/main)
 
 # Guide
 
