@@ -31,13 +31,17 @@ export type Gogoanime = {
  * @param {string} keyw query keyword to search
  * @param {string} page current page
  */
-export declare function scrapeSearch(list: ?AnimeList[], keyw: string, page: number = 1): Promise<?AnimeList[]>;
+export declare function scrapeSearch(
+  list: AnimeList[] | null | undefined,
+  keyw: string,
+  page: number = 1
+): Promise<AnimeList[] | null | undefined>;
 
 /**
  *
  * @param animeId anime id to scrape the anime info
  * @returns {Gogoanime} anime info object
  */
-export declare function scrapeAnimeDetails(animeId: string): Promise<?Gogoanime>;
+export declare function scrapeAnimeDetails(animeId: string): Promise<Gogoanime | null | undefined>;
 
 // TODO: add more functions
