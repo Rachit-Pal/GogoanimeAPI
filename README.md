@@ -156,7 +156,7 @@ Output >>
 
 | Parameter    | Description       |
 | ------------ | ----------------- |
-| `page` (int) | page limit [1-26] |
+| `page` (int) | page limit [1-26]. ***-1** to fetch all the pages avaliable **Warning: Waiting time will be much longer.*** |
 
 ```js
 fetch("https://gogoanime.herokuapp.com/top-airing")
