@@ -2,11 +2,12 @@
     "name": "gogoanime-api",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "lib/anime_parser.js",
     "type": "module",
+    "types": "lib/types/index.d.ts",
     "scripts": {
-        "start": "node src/api.js",
-        "dev": "nodemon src/api.js",
+        "start": "node lib/api.js",
+        "dev": "nodemon lib/api.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
@@ -14,10 +15,13 @@
     "license": "ISC",
     "dependencies": {
         "axios": "^0.24.0",
+        "binascii": "^0.0.2",
         "cheerio": "^1.0.0-rc.10",
         "cors": "^2.8.5",
         "crypto-js": "^4.1.1",
-        "express": "^4.17.1"
+        "express": "^4.17.1",
+        "puppeteer": "^14.2.1",
+        "user-agents": "^1.0.1039"
     },
     "devDependencies": {
         "nodemon": "^2.0.15"
