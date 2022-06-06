@@ -483,3 +483,4 @@ Output >>
     ]
 }
 ```
+The `id`, `parent` and `depth` keys on the comments list can be used to determine the comment structure in your app.
