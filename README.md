@@ -38,6 +38,8 @@ Below you'll find examples using [Fetch API](https://developer.mozilla.org/en-US
     - [VIDCDN](#vidcdn)
     - [StreamSB](#streamsb)
     - [Fembed](#fembed)
+  - [Get Download URLs](#get-download-urls)
+    - [Download](#download)
   - [Get Episode Thread](#get-episode-thread)
 
 ## Get Recent Episodes
@@ -398,6 +400,57 @@ Output >>
   ]
 }
 ```
+
+## Get Download URLs
+
+```js
+fetch("https://gogoanime.herokuapp.com/download-links/spy-x-family-episode-9")
+  .then((response) => response.json())
+  .then((animelist) => console.log(animelist));
+```
+
+Output >>
+
+```json
+{
+    "headers": {
+        "Referer": "https://goload.pro/"
+    },
+    "sources": [
+        {
+            "quality": "360p",
+            "link": "https://cdn32.anicache.net/user1342/eb0fc5c2a93ecb60b19b4d5802b578b3/EP.9.v0.1654358471.360p.mp4?token=EVLs0upbYa_U4gWKhjpMXQ&expires=1654561056&id=187373"
+        },
+        {
+            "quality": "480p",
+            "link": "https://cdn32.anicache.net/user1342/eb0fc5c2a93ecb60b19b4d5802b578b3/EP.9.v0.1654358471.480p.mp4?token=Zp7sVEbb-JOYFBMEtJ_AzA&expires=1654561056&id=187373"
+        },
+        {
+            "quality": "720p",
+            "link": "https://cdn32.anicache.net/user1342/eb0fc5c2a93ecb60b19b4d5802b578b3/EP.9.v0.1654358471.720p.mp4?token=vyq9wSLYVq_u8sWtLd7vkA&expires=1654561056&id=187373"
+        },
+        {
+            "quality": "1080p",
+            "link": "https://cdn32.anicache.net/user1342/eb0fc5c2a93ecb60b19b4d5802b578b3/EP.9.v0.1654358471.1080p.mp4?token=2JKC_e7s5qc7fh1Yso94jA&expires=1654561056&id=187373"
+        }
+    ]
+}
+```
+you can use the headers.referer to bypass the 403 error and download the file.
+Or you can use the [download route](#download) to download the file.
+
+### Download
+
+  ```js
+  fetch("https://gogoanime.herokuapp.com/download", {
+    method: "GET",
+    headers: {
+      "downloadLink": "https://cdn34.anicache.net/user1342/eb0fc5c2a93ecb60b19b4d5802b578b3/EP.9.v0.1654358471.360p.mp4?token=-Dgjd_aQz6aIQKwY7hZyLQ&expires=1654562557&id=187373",
+    }
+  })
+  ```
+Then it will start downloading the file.
+
 ## Get Episode Thread
 | Parameter         | Description                                                                                                                    |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -411,7 +464,7 @@ fetch("https://gogoanime.herokuapp.com/thread/spy-x-family-episode-9?page=1")
 ```
 
 Output >>
-```
+```json
 {
     "threadId": "9201260224",
     "currentPage": "1",
