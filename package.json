@@ -5,6 +5,9 @@
     "main": "lib/anime_parser.js",
     "type": "module",
     "types": "lib/types/index.d.ts",
+    "engines": {
+        "node": ">=8.0.0"
+    },
     "scripts": {
         "start": "node lib/api.js",
         "dev": "nodemon lib/api.js",
