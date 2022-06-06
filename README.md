@@ -440,6 +440,7 @@ you can use the headers.referer to bypass the 403 error and download the file.
 Or you can use the [download route](#download) to download the file.
 
 ### Download
+**Make sure to add `downloadLink` header to the headers**, which should contain the link received from the response above.
 
   ```js
   fetch("https://gogoanime.herokuapp.com/download", {
