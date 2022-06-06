@@ -406,7 +406,7 @@ Output >>
 ```js
 fetch("https://gogoanime.herokuapp.com/download-links/spy-x-family-episode-9")
   .then((response) => response.json())
-  .then((animelist) => console.log(animelist));
+  .then((links) => console.log(links));
 ```
 
 Output >>
