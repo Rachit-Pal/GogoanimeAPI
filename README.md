@@ -25,16 +25,20 @@
 
 Below you'll find examples using [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) but you can use any other http library out there.
 
-## Available Routes
-
-- [Get Recent Episodes](#get-recent-episodes)
-- [Get Popular Anime](#get-popular-anime)
-- [Get Anime Search](#get-anime-search)
-- [Get Anime Movies](#get-anime-movies)
-- [Get Top Airing](#get-top-airing)
-- [Get Anime Genres](#get-anime-genres)
-- [Get Anime Details](#get-anime-details)
-- [Get Streaming URLs](#get-streaming-urls)
+- [Guide](#guide)
+  - [Get Recent Episodes](#get-recent-episodes)
+  - [Get Popular Anime](#get-popular-anime)
+  - [Get Anime Search](#get-anime-search)
+  - [Get Anime Movies](#get-anime-movies)
+  - [Get Top Airing](#get-top-airing)
+  - [Get Anime Genres](#get-anime-genres)
+      - [Genres](#genres)
+  - [Get Anime Details](#get-anime-details)
+  - [Get Streaming URLs](#get-streaming-urls)
+    - [VIDCDN](#vidcdn)
+    - [StreamSB](#streamsb)
+    - [Fembed](#fembed)
+  - [Get Episode Thread](#get-episode-thread)
 
 ## Get Recent Episodes
 
@@ -154,8 +158,8 @@ Output >>
 
 ## Get Top Airing
 
-| Parameter    | Description       |
-| ------------ | ----------------- |
+| Parameter    | Description                                                                                                 |
+| ------------ | ----------------------------------------------------------------------------------------------------------- |
 | `page` (int) | page limit [1-26]. ***-1** to fetch all the pages avaliable **Warning: Waiting time will be much longer.*** |
 
 ```js
@@ -302,9 +306,9 @@ Output >>
 
 You might need the referer url to bypass 403 (Forbidden) HTTP code.
 
-| Parameter      | Description                                                                                              |
-| -------------- | -------------------------------------------------------------------------------------------------------- |
-| `:id` (string) | episodeId. **To verify the id of each episode, look at the episodesList property in the example above.** |
+| Parameter      | Description                                                                                                                    |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `:id` (string) | episodeId. **To verify the id of each episode, look at the episodesList property in the [example above](#get-anime-details).** |
 
 ### VIDCDN
 
@@ -365,7 +369,7 @@ Output >>
 
 ### Fembed
 
-#### **Note: This is not available for all anime(s), so you might need to use another provider instead. VIDCDN and StreamSB are the most reliable**
+**Note: This is not available for all anime(s), so you might need to use another provider instead. VIDCDN and StreamSB are the most reliable**
 
 ```js
 fetch("https://gogoanime.herokuapp.com/fembed/watch/spy-x-family-episode-5")
@@ -392,5 +396,90 @@ Output >>
       "type": "mp4"
     }
   ]
+}
+```
+## Get Episode Thread
+| Parameter         | Description                                                                                                                    |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `:episodeId`      | episodeId. **To verify the id of each episode, look at the episodesList property in the [example above](#get-anime-details).** |
+| `page` (optional) | page number. Default is 0.                                                                                                     |
+
+```js
+fetch("https://gogoanime.herokuapp.com/thread/spy-x-family-episode-9?page=1")
+  .then((response) => response.json())
+  .then((thread) => console.log(thread));
+```
+
+Output >>
+```
+{
+    "threadId": "9201260224",
+    "currentPage": "1",
+    "hasNextPage": true,
+    "comments": [
+        {
+            "editableUntil": "2022-06-11T15:50:14",
+            "dislikes": 0,
+            "thread": "9201260224",
+            "numReports": 0,
+            "likes": 75,
+            "message": "<p>Like brother, like sister I guess. Neither of them could handle the kiss, but Yuri was the one to suffer for it. Poor guy looked like he needed a trip to the ER, lol</p>",
+            "id": "5878499824",  // comment id
+            "createdAt": "2022-06-04T15:50:14",
+            "author": {
+                "username": "Judgment526",
+                "about": "",
+                "name": "Judgment526",
+                "disable3rdPartyTrackers": false,
+                "isPowerContributor": false,
+                "joinedAt": "2016-03-01T19:52:06",
+                "profileUrl": "https://disqus.com/by/Judgment526/",
+                "url": "https://myanimelist.net/profile/Judgment526",
+                "location": "",
+                "isPrivate": false,
+                "signedUrl": "https://disq.us/?url=https%3A%2F%2Fmyanimelist.net%2Fprofile%2FJudgment526&key=1_hPDEw0NPhrhEqk1en2nA",
+                "isPrimary": true,
+                "isAnonymous": false,
+                "id": "198796971",
+                "avatar": {
+                    "permalink": "https://disqus.com/api/users/avatars/Judgment526.jpg",
+                    "xlarge": {
+                        "permalink": "https://disqus.com/api/users/avatars/Judgment526.jpg",
+                        "cache": "https://c.disquscdn.com/uploads/users/19879/6971/avatar200.jpg?1649817631"
+                    },
+                    "cache": "https://c.disquscdn.com/uploads/users/19879/6971/avatar92.jpg?1649817631",
+                    "large": {
+                        "permalink": "https://disqus.com/api/users/avatars/Judgment526.jpg",
+                        "cache": "https://c.disquscdn.com/uploads/users/19879/6971/avatar92.jpg?1649817631"
+                    },
+                    "small": {
+                        "permalink": "https://disqus.com/api/users/avatars/Judgment526.jpg",
+                        "cache": "https://c.disquscdn.com/uploads/users/19879/6971/avatar32.jpg?1649817631"
+                    },
+                    "isCustom": true
+                }
+            },
+            "media": [],
+            "isSpam": false,
+            "isDeletedByAuthor": false,
+            "isHighlighted": false,
+            "hasMore": false,
+            "parent": null,
+            "isApproved": true,
+            "isNewUserNeedsApproval": false,
+            "isDeleted": false,
+            "isFlagged": false,
+            "raw_message": "Like brother, like sister I guess. Neither of them could handle the kiss, but Yuri was the one to suffer for it. Poor guy looked like he needed a trip to the ER, lol",
+            "isAtFlagLimit": false,
+            "canVote": false,
+            "forum": "gogoanimetv",
+            "depth": 0, // comment depth. 0 means top level comment (root)
+            "points": 75,
+            "moderationLabels": [],
+            "isEdited": false,
+            "sb": false
+        },
+        {...},
+    ]
 }
 ```
