@@ -23,7 +23,9 @@
         "cors": "^2.8.5",
         "crypto-js": "^4.1.1",
         "express": "^4.17.1",
+        "proxy-chain": "^2.0.1",
         "puppeteer": "^14.2.1",
+        "puppeteer-extra-plugin-stealth": "^2.9.0",
         "random-useragent": "^0.5.0",
         "user-agents": "^1.0.1039"
     },
