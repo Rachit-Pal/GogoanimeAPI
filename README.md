@@ -40,8 +40,8 @@ Below you'll find examples using [Fetch API](https://developer.mozilla.org/en-US
   - [Get Streaming URLs](#get-streaming-urls)
     - [VIDCDN](#vidcdn)
     - [StreamSB](#streamsb)
-    - [Fembed](#fembed)
-  - [Get Download URLs](#get-download-urls)
+    - [~~Fembed~~](#fembed-deprecated) (DEPRECATED)
+  - [~~Get Download URLs~~](#get-download-urls-deprecated) (DEPRECATED)
     - [Download](#download)
   - [Get Episode Thread](#get-episode-thread)
 
@@ -372,7 +372,7 @@ Output >>
 }
 ```
 
-### Fembed
+### ~~Fembed~~ (DEPRECATED)
 
 **Note: This is not available for all anime(s), so you might need to use another provider instead. VIDCDN and StreamSB are the most reliable**
 
@@ -404,7 +404,7 @@ Output >>
 }
 ```
 
-## Get Download URLs
+## ~~Get Download URLs~~ (DEPRECATED)
 
 ```js
 fetch("https://gogoanime.herokuapp.com/download-links/spy-x-family-episode-9")
