@@ -618,7 +618,7 @@ git clone https://github.com/<your-username>/gogoanime.git
 
 
 ## NEW API (v2) 🎉
-I'm currently working on a new api with new functionalities and features. This api is split into two parts. The first part is the [main api](https://github.com/consumet/consumet-api) and the second part is the [extensions nodejs package](https://github.com/consumet/extensions) which will be used to extend the functionality of the main api.
+I'm currently working on a new api with new functionalities and features. This api is split into two parts. The first part is the [main api](https://github.com/consumet/consumet-api) and the second part is the [consumet.ts nodejs package](https://github.com/consumet/consumet.ts) which will be used to extend the functionality of the main api.
 
 ### What's new?
 - [x] can now add any anime site to the api. Currently, there are only 2 sites: [gogoanime](https://gogoanime.gg/) and [animepahe](https://animepahe.com/). (Your contribution is needed!)
@@ -630,7 +630,7 @@ I'm currently working on a new api with new functionalities and features. This a
 
 ### How to get started?
 - [Rest API Documentation](https://docs.consumet.org/), [Rest API Repository](https://github.com/consumet/consumet-api#table-of-contents)
-- [NodeJS Package Documentation](https://github.com/consumet/extensions#table-of-contents): where most of the development is happening.
+- [NodeJS Package Documentation](https://github.com/consumet/consumet.ts#table-of-contents): where most of the development is happening.
 
 
 > ### Note:
