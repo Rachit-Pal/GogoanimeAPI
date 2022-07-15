@@ -6,9 +6,9 @@
   <h3 align="center">GogoAnime API</h3>
 
   <p align="center">
-    <samp>A free anime streaming restful API serving anime from <a href="https://www1.gogoanime.cm/">GogoAnime</a></samp>
+    <samp>A free anime streaming restful API serving anime from <a href="https://www1.gogoanime.cm/">Gogoanime</a></samp>
     <br />
-    <a href="#available-routes"><strong>Explore the api »</strong></a>
+    <a href="#routes"><strong>Explore the api »</strong></a>
     <br />
     <br />
     <a href="https://github.com/riimuru/gogoanime/issues/new?assignees=riimuru&labels=bug&template=bug-report.yml">Bug report</a>
@@ -16,36 +16,95 @@
     <a href="https://github.com/riimuru/gogoanime/issues/new?assignees=riimuru&labels=enhancement&template=feature-request.md">Feature request</a>
   </p>
   <p align="center">
-  <img src="https://img.shields.io/github/stars/riimuru/gogoanime?style=social" alt="stars">
+    </a>
+    <a href="https://discord.gg/qTPfvMxzNH">
+      <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="Prs are welcome">
+    </a>
+    <a href="https://github.com/consumet/extensions/blob/master/LICENSE">
+      <img src="https://img.shields.io/github/license/consumet/extensions" alt="GitHub">
+    </a>
+    <a href="https://github.com/riimuru/gogoanime">
+      <img src="https://img.shields.io/github/stars/riimuru/gogoanime" alt="stars">
+    </a>
+    <a href="https://discord.gg/qTPfvMxzNH">
+      <img src="https://img.shields.io/discord/987492554486452315.svg?label=discord&labelColor=7289da&color=2c2f33" alt="Discord">
+    </a>
   </p>
 </p>
 
-### Note: You might experience some delays or issues using [my hosted api on heroku](https://gogoanime.herokuapp.com/), so feel free to host it on your own site or use the heroku deployment button for easier deployment.
+<br/>
 
-[![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/riimuru/gogoanime/tree/main)
+> ### Note:
+> You might experience some delays or issues using [my hosted api on heroku](https://gogoanime.herokuapp.com/), so feel free to host it on your own site.
 
-# Guide
+<h1> Table of Contents </h1>
 
 Below you'll find examples using [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) but you can use any other http library out there.
 
-- [Guide](#guide)
+- [Installation](#installation)
+  - [Local](#local)
+  - [Docker](#docker)
+  - [Heroku](#heroku)
+- [Routes](#routes)
   - [Get Recent Episodes](#get-recent-episodes)
   - [Get Popular Anime](#get-popular-anime)
   - [Get Anime Search](#get-anime-search)
   - [Get Anime Movies](#get-anime-movies)
   - [Get Top Airing](#get-top-airing)
   - [Get Anime Genres](#get-anime-genres)
-      - [Genres](#genres)
+    - [Genres](#genres)
   - [Get Anime Details](#get-anime-details)
   - [Get Streaming URLs](#get-streaming-urls)
     - [VIDCDN](#vidcdn)
     - [StreamSB](#streamsb)
-    - [~~Fembed~~](#fembed-deprecated) (DEPRECATED)
-  - [~~Get Download URLs~~](#get-download-urls-deprecated) (DEPRECATED)
+    - [~~Fembed~~ (DEPRECATED)](#fembed-deprecated)
+  - [~~Get Download URLs~~ (DEPRECATED)](#get-download-urls-deprecated)
     - [Download](#download)
   - [Get Episode Thread](#get-episode-thread)
+- [Contributing](#contributing)
+- [NEW API (v2) 🎉](#new-api-v2-)
+  - [What's new?](#whats-new)
+  - [How to get started?](#how-to-get-started)
 
-## Get Recent Episodes
+
+## Installation
+
+### Local
+Run the following command to clone the repository, and install the dependencies:
+
+```sh
+git clone https://github.com/riimuru/gogoanime.git
+cd gogoanime
+npm install #or yarn install
+```
+
+start the server with the following command:
+
+```sh
+npm start #or yarn start
+```
+
+### Docker
+Docker image is available at [Docker Hub](https://hub.docker.com/r/riimuru/gogoanime).
+
+run the following command to pull and run the docker image.
+
+```sh
+$ docker pull riimuru/gogoanime
+$ docker run -p 3000:3000 riimuru/gogoanime
+```
+This will start the server on port 3000. You can access the server at http://localhost:3000/, And can change the port by changing the -p option to `-p <port>:3000`.
+
+You can add `-d` flag to run the server in detached mode.
+
+### Heroku
+Host your own instance of the api on heroku using the button below.\
+[![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/riimuru/gogoanime/tree/main)
+
+
+## Routes
+
+### Get Recent Episodes
 
 | Parameter    | Description                                                                                                                                                                                   |
 | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -75,7 +134,7 @@ Output >>
 ]
 ```
 
-## Get Popular Anime
+### Get Popular Anime
 
 | Parameter    | Description         |
 | ------------ | ------------------- |
@@ -103,7 +162,7 @@ Output >>
 ]
 ```
 
-## Get Anime Search
+### Get Anime Search
 
 | Parameter       | Description         |
 | --------------- | ------------------- |
@@ -132,7 +191,7 @@ Output >>
 ]
 ```
 
-## Get Anime Movies
+### Get Anime Movies
 
 | Parameter      | Description                                                                                                                    |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -161,7 +220,7 @@ Output >>
 ]
 ```
 
-## Get Top Airing
+### Get Top Airing
 
 | Parameter    | Description                                                                                                 |
 | ------------ | ----------------------------------------------------------------------------------------------------------- |
@@ -190,7 +249,7 @@ Output >>
 ]
 ```
 
-## Get Anime Genres
+### Get Anime Genres
 
 | Parameter         | Description                           |
 | ----------------- | ------------------------------------- |
@@ -198,6 +257,8 @@ Output >>
 | `page` (int)      | The page limit varies by genre.       |
 
 #### Genres
+<details>
+<summary>Genres list</summary>
 
 | Genre           |
 | --------------- |
@@ -249,6 +310,9 @@ Output >>
 | `yaoi`          |
 | `yuri`          |
 
+</details>
+&nbsp;
+
 ```js
 fetch("https://gogoanime.herokuapp.com/genre/action")
   .then((response) => response.json())
@@ -270,7 +334,7 @@ Output >>
     ...
 ```
 
-## Get Anime Details
+### Get Anime Details
 
 | Parameter      | Description                                                                          |
 | -------------- | ------------------------------------------------------------------------------------ |
@@ -307,7 +371,7 @@ Output >>
 }
 ```
 
-## Get Streaming URLs
+### Get Streaming URLs
 
 You might need the referer url to bypass 403 (Forbidden) HTTP code.
 
@@ -315,7 +379,7 @@ You might need the referer url to bypass 403 (Forbidden) HTTP code.
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | `:id` (string) | episodeId. **To verify the id of each episode, look at the episodesList property in the [example above](#get-anime-details).** |
 
-### VIDCDN
+#### VIDCDN
 
 ```js
 fetch("https://gogoanime.herokuapp.com/vidcdn/watch/naruto-episode-220")
@@ -346,7 +410,7 @@ Output >>
 }
 ```
 
-### StreamSB
+#### StreamSB
 
 ```js
 fetch("https://gogoanime.herokuapp.com/streamsb/watch/naruto-episode-220")
@@ -372,7 +436,7 @@ Output >>
 }
 ```
 
-### ~~Fembed~~ (DEPRECATED)
+#### ~~Fembed~~ (DEPRECATED)
 
 **Note: This is not available for all anime(s), so you might need to use another provider instead. VIDCDN and StreamSB are the most reliable**
 
@@ -404,7 +468,7 @@ Output >>
 }
 ```
 
-## ~~Get Download URLs~~ (DEPRECATED)
+### ~~Get Download URLs~~ (DEPRECATED)
 
 ```js
 fetch("https://gogoanime.herokuapp.com/download-links/spy-x-family-episode-9")
@@ -442,7 +506,7 @@ Output >>
 you can use the headers.referer to bypass the 403 error and download the file.
 Or you can use the [download route](#download) to download the file.
 
-### Download
+#### Download
 **Make sure to add `downloadLink` header to the headers**, which should contain the link received from the response above.
 
   ```js
@@ -455,7 +519,7 @@ Or you can use the [download route](#download) to download the file.
   ```
 Then it will start downloading the file.
 
-## Get Episode Thread
+### Get Episode Thread
 | Parameter         | Description                                                                                                                    |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | `:episodeId`      | episodeId. **To verify the id of each episode, look at the episodesList property in the [example above](#get-anime-details).** |
@@ -541,3 +605,38 @@ Output >>
 }
 ```
 The `id`, `parent` and `depth` keys on the comments list can be used to determine the comment structure in your app.
+
+## Contributing
+1. [Fork the repository](https://github.com/riimuru/gogoanime)
+2. Clone your fork to your local machine using the following command **(make sure to change `<your_username>` to your GitHub username)**:
+```sh
+git clone https://github.com/<your-username>/gogoanime.git
+```
+3. Create a new branch: `git checkout -b <new-branch-name>` (e.g. `git checkout -b my-new-branch`)
+4. Make your changes.
+5. Stage the changes: `git add .`
+6. Commit the changes: `git commit -m "My commit message"`
+7. Push the changes to GitHub: `git push origin <new-branch-name>` (e.g. `git push origin my-new-branch`)
+8. Open a pull request.
+
+
+## NEW API (v2) 🎉
+I'm currently working on a new api with new functionalities and features. This api is split into two parts. The first part is the [main api](https://github.com/consumet/consumet-api) and the second part is the [extensions nodejs package](https://github.com/consumet/extensions) which will be used to extend the functionality of the main api.
+
+### What's new?
+- [x] can now add any anime site to the api. Currently, there are only 2 sites: [gogoanime](https://gogoanime.gg/) and [animepahe](https://animepahe.com/). (Your contribution is needed!)
+- [x] can now add any book site to the api. [currently supported sites](https://consumet.org/extensions/list/#BOOKS)
+- [x] can now add any comic site to the api. [currently supported sites](https://consumet.org/extensions/list/#COMICS) 
+- [x] can now add any movie/tvshow site to the api. [currently supported sites](https://consumet.org/extensions/list/#MOVIES)
+- [x] can now add any manga site to the api. [currently supported sites](https://consumet.org/extensions/list/#MANGA)
+- [x] [realtime status](https://consumet.org/extensions/list/) of the providers.
+
+### How to get started?
+- [Rest API Documentation](https://docs.consumet.org/), [Rest API Repository](https://github.com/consumet/consumet-api#table-of-contents)
+- [NodeJS Package Documentation](https://github.com/consumet/extensions#table-of-contents): where most of the development is happening.
+
+
+> ### Note:
+> **Your feedback and suggestions are very welcome. Please [open an issue](https://github.com/consumet/consumet-api/issues/new/choose) or join the [discord server](https://discord.gg/qTPfvMxzNH).**
+> This project will still be maintained.
+

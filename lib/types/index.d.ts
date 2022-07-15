@@ -1,28 +1,28 @@
 export type AnimeList = {
-  animeId?: string;
-  animeTitle?: string;
-  animeUrl?: string;
-  animeImg?: string;
-  status?: string;
+ animeId?: string;
+ animeTitle?: string;
+ animeUrl?: string;
+ animeImg?: string;
+ status?: string;
 };
 
 export type GogoEpisode = {
-  episodeId?: string;
-  episodeNum?: number | string;
-  episodeUrl?: string;
+ episodeId?: string;
+ episodeNum?: number | string;
+ episodeUrl?: string;
 };
 
 export type Gogoanime = {
-  animeId?: string;
-  type?: string;
-  animeTitle?: string;
-  animeImg?: string;
-  status?: string;
-  genres?: string[];
-  otherNames?: string[] | string;
-  synopsis?: string;
-  totalEpisodes?: number | string;
-  episodesList?: GogoEpisode[];
+ animeId?: string;
+ type?: string;
+ animeTitle?: string;
+ animeImg?: string;
+ status?: string;
+ genres?: string[];
+ otherNames?: string[] | string;
+ synopsis?: string;
+ totalEpisodes?: number | string;
+ episodesList?: GogoEpisode[];
 };
 
 /**
@@ -32,9 +32,9 @@ export type Gogoanime = {
  * @param {string} page current page
  */
 export declare function scrapeSearch(
-  list: AnimeList[] | null | undefined,
-  keyw: string,
-  page: number = 1
+ list: AnimeList[] | null | undefined,
+ keyw: string,
+ page: number = 1
 ): Promise<AnimeList[] | null | undefined>;
 
 /**
@@ -42,6 +42,8 @@ export declare function scrapeSearch(
  * @param animeId anime id to scrape the anime info
  * @returns {Gogoanime} anime info object
  */
-export declare function scrapeAnimeDetails(animeId: string): Promise<Gogoanime | null | undefined>;
+export declare function scrapeAnimeDetails(
+ animeId: string
+): Promise<Gogoanime | null | undefined>;
 
 // TODO: add more functions
