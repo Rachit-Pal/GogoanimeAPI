@@ -17,9 +17,6 @@
   </p>
   <p align="center">
     </a>
-    <a href="https://discord.gg/qTPfvMxzNH">
-      <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="Prs are welcome">
-    </a>
     <a href="https://github.com/consumet/extensions/blob/master/LICENSE">
       <img src="https://img.shields.io/github/license/consumet/extensions" alt="GitHub">
     </a>
@@ -38,8 +35,6 @@
 > You might experience some delays or issues using [my hosted api on heroku](https://gogoanime.herokuapp.com/), so feel free to host it on your own site.
 
 <h1> Table of Contents </h1>
-
-Below you'll find examples using [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) but you can use any other http library out there.
 
 - [Installation](#installation)
   - [Local](#local)
@@ -83,6 +78,7 @@ start the server with the following command:
 ```sh
 npm start #or yarn start
 ```
+Now the server is running on http://localhost:3000
 
 ### Docker
 Docker image is available at [Docker Hub](https://hub.docker.com/r/riimuru/gogoanime).
@@ -90,8 +86,8 @@ Docker image is available at [Docker Hub](https://hub.docker.com/r/riimuru/gogoa
 run the following command to pull and run the docker image.
 
 ```sh
-$ docker pull riimuru/gogoanime
-$ docker run -p 3000:3000 riimuru/gogoanime
+docker pull riimuru/gogoanime
+docker run -p 3000:3000 riimuru/gogoanime
 ```
 This will start the server on port 3000. You can access the server at http://localhost:3000/, And can change the port by changing the -p option to `-p <port>:3000`.
 
@@ -103,6 +99,7 @@ Host your own instance of the api on heroku using the button below.\
 
 
 ## Routes
+Below you'll find examples using [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) but you can use any other http library out there.
 
 ### Get Recent Episodes
 
