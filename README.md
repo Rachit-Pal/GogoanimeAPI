@@ -29,8 +29,6 @@
   </p>
 </p>
 
-<br/>
-
 > ### Note:
 > You might experience some delays or issues using [my hosted api on heroku](https://gogoanime.herokuapp.com/), so feel free to host it on your own site.
 
