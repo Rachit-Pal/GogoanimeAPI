@@ -24,7 +24,7 @@
       <img src="https://img.shields.io/github/stars/riimuru/gogoanime" alt="stars">
     </a>
     <a href="https://discord.gg/qTPfvMxzNH">
-      <img src="https://img.shields.io/discord/987492554486452315.svg?label=discord&labelColor=7289da&color=2c2f33" alt="Discord">
+      <img src="https://img.shields.io/discord/987492554486452315?color=7289da&label=discord&logo=discord&logoColor=7289da" alt="Discord">
     </a>
   </p>
 </p>
