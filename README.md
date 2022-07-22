@@ -16,15 +16,20 @@
     <a href="https://github.com/riimuru/gogoanime/issues/new?assignees=riimuru&labels=enhancement&template=feature-request.md">Feature request</a>
   </p>
   <p align="center">
+    <a href="https://github.com/riimuru/gogoanime/actions/workflows/docker-build.yml">
+      <img src="https://github.com/riimuru/gogoanime/actions/workflows/docker-build.yml/badge.svg" alt="stars">
     </a>
-    <a href="https://github.com/consumet/extensions/blob/master/LICENSE">
-      <img src="https://img.shields.io/github/license/consumet/extensions" alt="GitHub">
+     <a href="https://github.com/riimuru/gogoanime/actions/workflows/codeql-analysis.yml">
+      <img src="https://github.com/riimuru/gogoanime/actions/workflows/codeql-analysis.yml/badge.svg" alt="stars">
     </a>
     <a href="https://github.com/riimuru/gogoanime">
       <img src="https://img.shields.io/github/stars/riimuru/gogoanime" alt="stars">
     </a>
     <a href="https://discord.gg/qTPfvMxzNH">
       <img src="https://img.shields.io/discord/987492554486452315?color=7289da&label=discord&logo=discord&logoColor=7289da" alt="Discord">
+    </a>
+        <a href="https://github.com/consumet/extensions/blob/master/LICENSE">
+      <img src="https://img.shields.io/github/license/consumet/extensions" alt="GitHub">
     </a>
   </p>
 </p>
