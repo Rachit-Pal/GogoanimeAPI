@@ -63,13 +63,6 @@
 - [Showcases](#showcases)
 - [NEW API (v2) 🎉](#new-api-v2-)
   - [Currently supported sites](#currently-supported-sites)
-    - [Anime](#anime)
-    - [Manga](#manga)
-    - [Books](#books)
-    - [Light Novels](#light-novels)
-    - [Movie/TV Shows](#movietv-shows)
-    - [Comics](#comics)
-    - [Meta Providers](#meta-providers)
   - [How to get started?](#how-to-get-started)
 
 
@@ -634,31 +627,65 @@ Projects using this api or smaller parts of it:
 > For other projects that are using this api or smaller parts of it, please reach out to me at my [discord rem#1723](https://discord.gg/775082234507427890) or join the [discord server](https://discord.gg/sP2k8vhjdb) or make a pull request to add it to the list.
 
 ## NEW API (v2) 🎉
-I have made a new [api](https://github.com/consumet/consumet-api) and a [nodejs library](https://github.com/consumet/consumet.ts) for developers to use in their projects. This new api/library is able to support any piracy site that is for anime, manga, books, light novels, movie/tvshows, comics, and even personal meta providers like mapping anilist -> gogoanime -> kitsu, or tmbd -> movie-database.
+I have made a new [api](https://github.com/consumet/consumet-api) and a [nodejs library](https://github.com/consumet/consumet.ts) (called consumet) for developers to use in their projects. This new api/library is able to support any piracy site that is for anime, manga, books, light novels, movie/tvshows, comics, and even personal meta providers like mapping anilist -> gogoanime -> kitsu, or tmbd -> movie-database.
 
 ### Currently supported sites
-#### Anime
+<details>
+<summary>Anime</summary>
+
 - [AnimePahe](https://animepahe.com/)
 - [Gogoanime](https://gogoanime.lu/)
 - [Zoro.to](https://zoro.to/)
-#### Manga
+
+</details>
+<details>
+<summary>Manga</summary>
+
 - [MangaDex](https://mangadex.org/)
 - [MangaHere](https://mangahere.cc/)
 - [MangaKakalot](https://mangakakalot.com/)
-#### Books
+</details>
+
+<details>
+<summary>Books</summary>
+
 - [Libgen](https://libgen.rs)
-#### Light Novels
+</details>
+
+<details>
+<summary>Light Novels</summary>
+
 - [Read Light Novels](https://readlightnovels.net/)
-#### Movie/TV Shows
+</details>
+
+<details>
+<summary>Movie/TV Shows</summary>
+
 - [FlixHQ](https://flixhq.to/)
-#### Comics
+</details>
+
+<details>
+<summary>Comics</summary>
+
 - [GetComics](https://getcomics.info/)
-#### Meta Providers
+</details>
+
+<details>
+<summary>Personal Meta Providers</summary>
+
 - [Anilist](https://anilist.co/) - Mapping anilist -> (piracy anime source) -> kitsu
+</details>
 
 ### How to get started?
 - [Rest API Documentation](https://docs.consumet.org/), [Rest API Repository](https://github.com/consumet/consumet-api#table-of-contents)
-- [NodeJS Package Documentation](https://github.com/consumet/consumet.ts#table-of-contents): where most of the development is happening.
+- [NodeJS Package Documentation](https://github.com/consumet/consumet.ts#readme): where most of the development is happening.
+
+Join the [discord server](https://discord.gg/sP2k8vhjdb) for support and help.
+<p align="center">
+  <a href="https://discord.gg/sP2k8vhjdb">
+    <img src="http://invidget.switchblade.xyz/987492554486452315">
+  </a>
+</p>
 
 
 > ### Note:
