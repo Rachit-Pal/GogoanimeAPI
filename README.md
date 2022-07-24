@@ -60,8 +60,16 @@
     - [Download](#download)
   - [Get Episode Thread](#get-episode-thread)
 - [Contributing](#contributing)
+- [Showcases](#showcases)
 - [NEW API (v2) 🎉](#new-api-v2-)
-  - [What's new?](#whats-new)
+  - [Currently supported sites](#currently-supported-sites)
+    - [Anime](#anime)
+    - [Manga](#manga)
+    - [Books](#books)
+    - [Light Novels](#light-novels)
+    - [Movie/TV Shows](#movietv-shows)
+    - [Comics](#comics)
+    - [Meta Providers](#meta-providers)
   - [How to get started?](#how-to-get-started)
 
 
@@ -619,17 +627,34 @@ git clone https://github.com/<your-username>/gogoanime.git
 7. Push the changes to GitHub: `git push origin <new-branch-name>` (e.g. `git push origin my-new-branch`)
 8. Open a pull request.
 
+## Showcases
+Projects using this api or smaller parts of it:
+- [Animeflix](https://github.com/chirag-droid/animeflix) - A streaming service made with NextJs and TailwindCSS. It lets you search, watch animes without any ads with a beautiful ui. It can be self hosted or deployed online.
+
+> For other projects that are using this api or smaller parts of it, please reach out to me at my [discord rem#1723](https://discord.gg/775082234507427890) or join the [discord server](https://discord.gg/sP2k8vhjdb) or make a pull request to add it to the list.
 
 ## NEW API (v2) 🎉
-I'm currently working on a new api with new functionalities and features. This api is split into two parts. The first part is the [main api](https://github.com/consumet/consumet-api) and the second part is the [consumet.ts nodejs package](https://github.com/consumet/consumet.ts) which will be used to extend the functionality of the main api.
+I have made a new [api](https://github.com/consumet/consumet-api) and a [nodejs library](https://github.com/consumet/consumet.ts) for developers to use in their projects. This new api/library is able to support any piracy site that is for anime, manga, books, light novels, movie/tvshows, comics, and even personal meta providers like mapping anilist -> gogoanime -> kitsu, or tmbd -> movie-database.
 
-### What's new?
-- [x] can now add any anime site to the api. Currently, there are only 2 sites: [gogoanime](https://gogoanime.gg/) and [animepahe](https://animepahe.com/). (Your contribution is needed!)
-- [x] can now add any book site to the api. [currently supported sites](https://consumet.org/extensions/list/#BOOKS)
-- [x] can now add any comic site to the api. [currently supported sites](https://consumet.org/extensions/list/#COMICS) 
-- [x] can now add any movie/tvshow site to the api. [currently supported sites](https://consumet.org/extensions/list/#MOVIES)
-- [x] can now add any manga site to the api. [currently supported sites](https://consumet.org/extensions/list/#MANGA)
-- [x] [realtime status](https://consumet.org/extensions/list/) of the providers.
+### Currently supported sites
+#### Anime
+- [AnimePahe](https://animepahe.com/)
+- [Gogoanime](https://gogoanime.lu/)
+- [Zoro.to](https://zoro.to/)
+#### Manga
+- [MangaDex](https://mangadex.org/)
+- [MangaHere](https://mangahere.cc/)
+- [MangaKakalot](https://mangakakalot.com/)
+#### Books
+- [Libgen](https://libgen.rs)
+#### Light Novels
+- [Read Light Novels](https://readlightnovels.net/)
+#### Movie/TV Shows
+- [FlixHQ](https://flixhq.to/)
+#### Comics
+- [GetComics](https://getcomics.info/)
+#### Meta Providers
+- [Anilist](https://anilist.co/) - Mapping anilist -> (piracy anime source) -> kitsu
 
 ### How to get started?
 - [Rest API Documentation](https://docs.consumet.org/), [Rest API Repository](https://github.com/consumet/consumet-api#table-of-contents)
