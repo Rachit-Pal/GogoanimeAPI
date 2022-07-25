@@ -2,6 +2,7 @@ FROM node:16 as builder
 
 LABEL version="1.0.0"
 LABEL description="Gogoanime API docker image"
+LABEL org.opencontainers.image.source https://github.com/riimuru/gogoanime
 
 # update packages, to reduce risk of vulnerabilities
 RUN apt-get update && apt-get upgrade -y && apt-get autoclean -y && apt-get autoremove -y
