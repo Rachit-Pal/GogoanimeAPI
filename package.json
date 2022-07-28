@@ -21,13 +21,10 @@
     "license": "ISC",
     "dependencies": {
         "axios": "^0.27.2",
-        "binascii": "^0.0.2",
         "cheerio": "^1.0.0-rc.10",
         "cors": "^2.8.5",
         "crypto-js": "^4.1.1",
-        "express": "^4.17.1",
-        "puppeteer": "^15.5.0",
-        "user-agents": "^1.0.1089"
+        "express": "^4.17.1"
     },
     "devDependencies": {
         "nodemon": "^2.0.15"
