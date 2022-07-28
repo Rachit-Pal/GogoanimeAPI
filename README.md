@@ -689,7 +689,9 @@ Join the [discord server](https://discord.gg/sP2k8vhjdb) for support and help.
 
 <a href="https://discord.gg/qTPfvMxzNH">
    <img src="https://discordapp.com/api/guilds/987492554486452315/widget.png?style=banner2">
-</p>
+</a>
+<br />
+<br />
 
 
 > ### Note:
