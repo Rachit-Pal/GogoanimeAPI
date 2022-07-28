@@ -98,7 +98,8 @@ This will start the server on port 3000. You can access the server at http://loc
 You can add `-d` flag to run the server in detached mode.
 
 ### Heroku
-Host your own instance of the api on heroku using the button below.\
+Host your own instance of the api on heroku using the button below.
+
 [![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/riimuru/gogoanime/tree/main)
 
 
@@ -685,10 +686,9 @@ I have made a new [api](https://github.com/consumet/consumet-api) and a [nodejs 
 - [NodeJS Package Documentation](https://github.com/consumet/consumet.ts#readme): where most of the development is happening.
 
 Join the [discord server](https://discord.gg/sP2k8vhjdb) for support and help.
-<p align="center">
-  <a href="https://discord.gg/sP2k8vhjdb">
-    <img src="http://invidget.switchblade.xyz/987492554486452315">
-  </a>
+
+<a href="https://discord.gg/qTPfvMxzNH">
+   <img src="https://discordapp.com/api/guilds/987492554486452315/widget.png?style=banner2">
 </p>
 
 
