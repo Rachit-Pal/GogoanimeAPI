@@ -638,7 +638,11 @@ I have made a new [api](https://github.com/consumet/consumet-api) and a [nodejs 
 <details>
 <summary>Anime</summary>
 
+- [9Anime](https://9anime.to/)
+- [AniMixPlay](https://animixplay.to)
+- [AnimeFox](https://animefox.tv)
 - [AnimePahe](https://animepahe.com/)
+- [Enime](https://enime.moe)
 - [Gogoanime](https://gogoanime.lu/)
 - [Zoro.to](https://zoro.to/)
 
@@ -678,7 +682,7 @@ I have made a new [api](https://github.com/consumet/consumet-api) and a [nodejs 
 <details>
 <summary>Personal Meta Providers</summary>
 
-- [Anilist](https://anilist.co/) - Mapping anilist -> (piracy anime source) -> kitsu
+- [Anilist](https://anilist.co/) - Mapping anilist -> (piracy anime source) -> kitsu (for episode images, and description)
 </details>
 
 ### How to get started?
